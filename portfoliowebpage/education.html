@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f7f7f7;
+            background: url('school.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        section {
+            padding: 2em;
+            background-color: white;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .education-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .education-item {
+            flex: 0 1 calc(30% - 20px);
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .education-item:hover {
+            transform: scale(1.05);
+        }
+
+        h3 {
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 0 0 10px;
+        }
+
+        .details {
+            display: none;
+        }
+
+        .details.active {
+            display: block;
+        }
+
+        .details h4 {
+            color: #3498db;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Your Name</h1>
+        <p>Web Developer</p>
+    </header>
+
+    <section>
+        <h2>Educational Details</h2>
+
+        <div class="education-details">
+
+            <div class="education-item" onclick="toggleDetails('college-details')">
+                <h3>College</h3>
+                <div class="details" id="college-details">
+                    <p>College Name: Velammal College of Engineering and Technology</p>
+                    <p>Marks: 9.50 CGPA</p>
+                    <p>Course: B.E.Computer Science and Engineering</p>
+                    <p>Academic Year: 2022-2026</p>
+                </div>
+            </div>
+
+            <div class="education-item" onclick="toggleDetails('hsc-details')">
+                <h3>HSC (Higher Secondary)</h3>
+                <div class="details" id="hsc-details">
+                    <p>College Name: St. Joseph's Girls' Higher Secondary School</p>
+                    <p>Marks: 98%</p>
+                    <p>Course: Computer Science</p>
+                    <p>Academic Year: 2021-2022</p>
+                </div>
+            </div>
+
+            <div class="education-item" onclick="toggleDetails('sslc-details')">
+                <h3>SSLC (Secondary School)</h3>
+                <div class="details" id="sslc-details">
+                    <p>School Name: Fusco's Matriculation School</p>
+                    <p>Marks: 97%</p>
+                    <p>Academic Year: 2020-2021</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleDetails(detailsId) {
+            const details = document.getElementById(detailsId);
+            details.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
